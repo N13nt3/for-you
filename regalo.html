@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Per te</title>
+    <style>
+        body {
+            background-image: url("dogo.jpeg");
+            background-position: right;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 95vh;
+            flex-direction: column;
+        }
+
+        .content {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        p {
+            margin: 0;
+            padding: 20px;
+            font-size: 1.2em;
+            line-height: 1.5;
+            max-width: 300px;
+            text-align: right;
+        }
+
+        video {
+            max-width: 100%;
+            height: 550px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 200, 0.8);
+            margin-left: 20px;
+        }
+
+        audio {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-position: center;
+                padding: 10px;
+            }
+
+            .content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            video {
+                margin-left: 0;
+                width: 100%;
+                height: auto;
+                margin-top: 20px;
+            }
+
+            p {
+                text-align: center;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio id="song">
+        <source src="All'ultimo respiro.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="content">
+        <video id="us" muted controls>
+            <source src="you,us.mp4" type="video/mp4"> 
+        </video>
+    </div>
+
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById("song").play();
+            }, 1700); // 1.7 secondi
+
+            setTimeout(function() { 
+                document.getElementById("us").play();
+            }, 8000); // 8 secondi
+        };
+    </script>
+</body>
+</html>
